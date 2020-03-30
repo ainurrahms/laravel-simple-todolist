@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Todo cara 1
+Route::get('/','TodolistsController@index');
+Route::get('/{todolist}','TodolistsController@show');
+Route::post('/','TodolistsController@store');
+Route::delete('/{todolist}','TodolistsController@destroy');
+Route::get('/{todolist}/edit','TodolistsController@edit');
+Route::patch('/{todolist}','TodolistsController@update');
+
+// Todo cara 2
+// Route::resource('/','TodolistsController');
+//tapi gak bisa mungkin salah penamaan
+
